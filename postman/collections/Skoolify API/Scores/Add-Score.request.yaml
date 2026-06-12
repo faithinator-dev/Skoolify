@@ -1,0 +1,19 @@
+$kind: http-request
+name: Add Score
+method: POST
+url: '{{baseUrl}}/api/scores'
+description: 'Record a score for a student.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "studentId": "{{studentId}}",
+      "subjectId": "{{subjectId}}",
+      "score": 85,
+      "maxScore": 100,
+      "examType": "midterm"
+    }

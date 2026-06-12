@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get All Subjects
+method: GET
+url: '{{baseUrl}}/api/subjects'
+description: 'Retrieve all subjects.'
+order: 1000

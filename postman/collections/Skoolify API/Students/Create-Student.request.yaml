@@ -1,0 +1,18 @@
+$kind: http-request
+name: Create Student
+method: POST
+url: '{{baseUrl}}/api/students'
+description: 'Enroll a new student.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "schoolId": "{{schoolId}}",
+      "grade": "10"
+    }

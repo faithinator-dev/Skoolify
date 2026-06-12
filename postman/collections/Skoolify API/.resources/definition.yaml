@@ -1,0 +1,11 @@
+$kind: collection
+name: Skoolify API
+description: 'A comprehensive School Management System API for managing schools, students, teachers, subjects, attendance, scores, and resources.'
+variables:
+  - key: baseUrl
+    value: 'http://localhost:5000'
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{token}}'

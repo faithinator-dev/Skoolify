@@ -1,0 +1,18 @@
+$kind: http-request
+name: Mark Attendance
+method: POST
+url: '{{baseUrl}}/api/attendance'
+description: 'Mark attendance for a student. Status: present, absent, late.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "studentId": "{{studentId}}",
+      "subjectId": "{{subjectId}}",
+      "date": "2026-06-12",
+      "status": "present"
+    }

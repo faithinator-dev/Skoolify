@@ -1,0 +1,19 @@
+$kind: http-request
+name: Create Resource
+method: POST
+url: '{{baseUrl}}/api/resources'
+description: 'Add a new school resource.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Algebra Textbook",
+      "type": "book",
+      "url": "https://example.com/algebra.pdf",
+      "schoolId": "{{schoolId}}",
+      "subjectId": "{{subjectId}}"
+    }

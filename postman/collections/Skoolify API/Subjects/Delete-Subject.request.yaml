@@ -1,0 +1,6 @@
+$kind: http-request
+name: Delete Subject
+method: DELETE
+url: '{{baseUrl}}/api/subjects/{{subjectId}}'
+description: 'Delete a subject.'
+order: 5000

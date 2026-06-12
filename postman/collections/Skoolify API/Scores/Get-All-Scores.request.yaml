@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get All Scores
+method: GET
+url: '{{baseUrl}}/api/scores'
+description: 'Retrieve all score records.'
+order: 1000

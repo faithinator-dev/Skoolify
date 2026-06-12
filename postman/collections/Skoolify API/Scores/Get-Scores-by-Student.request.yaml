@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get Scores by Student
+method: GET
+url: '{{baseUrl}}/api/scores/student/{{studentId}}'
+description: 'Get all scores for a specific student.'
+order: 2000

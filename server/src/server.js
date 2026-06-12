@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 
 const authRoutes = require('./routes/authRoutes');
+const studentRoutes = require("./routes/studentRoutes");
 
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use("/api/students", studentRoutes);
 
 app.get('/', (req, res) => {
   res.send('Skoolify API is running');

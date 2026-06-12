@@ -1,0 +1,18 @@
+$kind: http-request
+name: Create Teacher
+method: POST
+url: '{{baseUrl}}/api/teachers'
+description: 'Add a new teacher.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Mr. Alan Grant",
+      "email": "alan@greenwood.edu",
+      "schoolId": "{{schoolId}}",
+      "subjects": ["Math", "Physics"]
+    }

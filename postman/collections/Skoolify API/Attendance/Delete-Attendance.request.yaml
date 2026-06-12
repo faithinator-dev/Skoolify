@@ -1,0 +1,6 @@
+$kind: http-request
+name: Delete Attendance
+method: DELETE
+url: '{{baseUrl}}/api/attendance/{{attendanceId}}'
+description: 'Delete an attendance record.'
+order: 5000

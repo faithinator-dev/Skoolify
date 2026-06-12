@@ -1,0 +1,6 @@
+$kind: http-request
+name: Delete Score
+method: DELETE
+url: '{{baseUrl}}/api/scores/{{scoreId}}'
+description: 'Delete a score record.'
+order: 5000

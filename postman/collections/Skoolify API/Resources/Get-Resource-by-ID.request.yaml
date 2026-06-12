@@ -1,0 +1,6 @@
+$kind: http-request
+name: Get Resource by ID
+method: GET
+url: '{{baseUrl}}/api/resources/{{resourceId}}'
+description: 'Retrieve a specific resource by its ID.'
+order: 2000

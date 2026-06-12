@@ -1,0 +1,6 @@
+$kind: http-request
+name: Delete Teacher
+method: DELETE
+url: '{{baseUrl}}/api/teachers/{{teacherId}}'
+description: 'Remove a teacher record.'
+order: 5000

@@ -1,0 +1,16 @@
+$kind: http-request
+name: Update Subject
+method: PUT
+url: '{{baseUrl}}/api/subjects/{{subjectId}}'
+description: "Update a subject's details."
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Advanced Mathematics",
+      "teacherId": "{{teacherId}}"
+    }

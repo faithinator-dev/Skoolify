@@ -1,0 +1,17 @@
+$kind: http-request
+name: Create Subject
+method: POST
+url: '{{baseUrl}}/api/subjects'
+description: 'Create a new subject.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Mathematics",
+      "schoolId": "{{schoolId}}",
+      "teacherId": "{{teacherId}}"
+    }

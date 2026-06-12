@@ -1,0 +1,6 @@
+$kind: http-request
+name: Delete Resource
+method: DELETE
+url: '{{baseUrl}}/api/resources/{{resourceId}}'
+description: 'Delete a resource.'
+order: 5000

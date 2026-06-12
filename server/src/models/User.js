@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
         default: 'admin'
     },
     schoolName: String,    
+    schoolId: {
+     type: mongoose.Schema.Types.ObjectId,
+    ref: "School"
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

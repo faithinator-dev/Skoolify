@@ -1,0 +1,18 @@
+$kind: http-request
+name: register
+url: http://localhost:2180/api/auth/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"name\": \"Admin\",\r
+
+    \    \"email\": \"admin@skoolify.com\",\r
+
+    \    \"password\": \"123456\",\r
+
+    \    \"schoolName\": \"Skoolify Demo School\"\r
+
+    }"
+order: 1698741112276189

@@ -1,0 +1,18 @@
+$kind: http-request
+name: Create School
+method: POST
+url: '{{baseUrl}}/api/schools'
+description: 'Create a new school profile.'
+order: 3000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Greenwood High",
+      "address": "123 Main St",
+      "phone": "+1234567890",
+      "email": "admin@greenwood.edu"
+    }

@@ -73,14 +73,21 @@ Skoolify/
    - For development: `npm run dev`
    - For production: `npm start`
 
-## 🔌 API Endpoints (Initial)
+## 🔌 API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/auth/register` | Register a new user |
 | POST | `/api/auth/login` | Login and receive JWT |
+| GET/POST| `/api/students` | Manage Students |
+| GET | `/api/teachers` | Manage Teachers (Placeholder) |
+| GET | `/api/schools` | Manage Schools (Placeholder) |
+| GET | `/api/subjects` | Manage Subjects (Placeholder) |
+| GET | `/api/attendance`| Manage Attendance (Placeholder) |
+| GET | `/api/scores` | Manage Scores (Placeholder) |
+| GET | `/api/resources` | Manage Resources (Placeholder) |
 
-*More endpoints for students, teachers, and schools are under development.*
+*More endpoints and full CRUD functionality are under development.*
 
 ## 🤝 Contributing
 

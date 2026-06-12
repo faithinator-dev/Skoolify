@@ -16,7 +16,11 @@ const studentSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "School",
     required: true
-  }
+  },
+  subjects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Subject"
+  }]
 }, {
   timestamps: true
 });

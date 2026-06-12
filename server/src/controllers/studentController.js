@@ -15,7 +15,7 @@ exports.createStudent = async (req, res) => {
 
 exports.getStudents = async (req, res) => {
   try {
-    const students = await Student.find();
+    const students = await Student.find().populate("subjects");
 
     res.json(students);
   } catch (error) {

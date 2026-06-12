@@ -1,25 +1,66 @@
-// Auth controller logic
-// Note: You will need to import User, bcrypt, and jwt here later
-// const User = require('../models/User');
-// const bcrypt = require('bcryptjs');
-// const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+const bcrypt = require('bcryptjs');
+const generateToken = require('../utils/generateToken');
 
+// @desc    Register a new user
+// @route   POST /api/auth/register
 exports.register = async (req, res) => {
     try {
-        res.status(201).json({ message: "Register functionality not yet implemented" });
+        const { name, email, password, role, schoolName } = req.body;
+
+        const userExists = await User.findOne({ email });
+
+        if (userExists) {
+            return res.status(400).json({ message: 'User already exists' });
+        }
+
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        const user = await User.create({
+            name,
+            email,
+            password: hashedPassword,
+            role,
+            schoolName
+        });
+
+        if (user) {
+            res.status(201).json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                token: generateToken(user._id),
+            });
+        } else {
+            res.status(400).json({ message: 'Invalid user data' });
+        }
     } catch (error) {
-        res.status(500).json({ message: 'Server error' });
+        res.status(500).json({ message: error.message });
     }
 };
 
+// @desc    Authenticate user & get token
+// @route   POST /api/auth/login
 exports.login = async (req, res) => {
-    try{
+    try {
         const { email, password } = req.body;
-        
-        // This will currently fail because User, bcrypt, and jwt are not defined/imported
-        // But adding the export fixes the 'handler must be a function' crash
-        res.status(200).json({ message: "Login functionality placeholder" });
+
+        const user = await User.findOne({ email });
+
+        if (user && (await bcrypt.compare(password, user.password))) {
+            res.json({
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                role: user.role,
+                token: generateToken(user._id),
+            });
+        } else {
+            res.status(401).json({ message: 'Invalid email or password' });
+        }
     } catch (error) {
-        res.status(500).json({ message: 'Server error' });
+        res.status(500).json({ message: error.message });
     }
 };

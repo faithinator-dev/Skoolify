@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance | Skoolify</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar remains same -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">S</div>
+                <span class="logo-text">Skoolify</span>
+            </div>
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="students.html" class="nav-link"><i class="fa-solid fa-user-graduate"></i> Students</a>
+                <a href="attendance.html" class="nav-link active"><i class="fa-solid fa-calendar-check"></i> Attendance</a>
+                <a href="scores.html" class="nav-link"><i class="fa-solid fa-chart-line"></i> Scores</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-nav">
+                <div class="user-profile"><div class="avatar">AD</div></div>
+            </header>
+
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1>Daily Attendance</h1>
+                    <div style="display: flex; gap: 1rem;">
+                        <select class="form-control" style="width: 200px;">
+                            <option>Select Class</option>
+                            <option>Grade 10A</option>
+                            <option>Grade 11B</option>
+                        </select>
+                        <button class="btn btn-primary">Save Attendance</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">Toggle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alex Johnson</td>
+                                <td><span style="color: #10b981;">Present</span></td>
+                                <td style="text-align: right;">
+                                    <button class="btn btn-outline btn-sm">Present</button>
+                                    <button class="btn btn-outline btn-sm">Absent</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/attendance.js"></script>
+</body>
+</html>

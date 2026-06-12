@@ -6,13 +6,14 @@ const userSchema = new mongoose.Schema({
     password: String,
     role: {
         type: String,
-        enum: ['admin', 'teacher', 'student'],
-        default: 'admin'
+        enum: ['super_admin', 'school_admin', 'teacher', 'student'],
+        default: 'school_admin'
     },
     schoolName: String,    
     schoolId: {
      type: mongoose.Schema.Types.ObjectId,
-    ref: "School"
+     ref: "School",
+     required: false // Super admins don't have a schoolId
     },
 }, { timestamps: true });
 
